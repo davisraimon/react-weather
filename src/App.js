@@ -63,7 +63,7 @@ class App extends React.Component {
     e.preventDefault();
     const city = e.target.elements.city.value
     if(city){
-    const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=024cc63f5397c4eeaeedb5582456d428`);
+    const api_call = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&appid=024cc63f5397c4eeaeedb5582456d428`);
     const response = await api_call.json();
     console.log(response.cod)
     if(response.cod==200){
