@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Weather from './components/weather.component'
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'weather-icons/css/weather-icons.css'
 import Form from './components/form.component'
-const API_key = '024cc63f5397c4eeaeedb5582456d428'
+
 
 
 
@@ -50,12 +49,15 @@ class App extends React.Component {
       case id>=700&&id<=781:     
         this.setState({ icon:weatherIcons.atmosphere  });
         break;
-      case id==800:     
+      case id===800:     
         this.setState({ icon:weatherIcons.clear  });
         break;    
       case id>=800&&id<=804:     
         this.setState({ icon:weatherIcons.clouds  });
-        break;  
+        break;
+      default:
+        this.setState({ icon:weatherIcons.clear  });
+        break;      
     }
     
   }
@@ -66,7 +68,7 @@ class App extends React.Component {
     const api_call = await fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&appid=024cc63f5397c4eeaeedb5582456d428`);
     const response = await api_call.json();
     console.log(response.cod)
-    if(response.cod==200){
+    if(response.cod===200){
     this.setState({
       city:response.name,
       country:response.sys.country,
