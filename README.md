@@ -1,4 +1,5 @@
 # A Simple React Weather App
+[![Build Status](https://travis-ci.com/davisraimon/react-weather.svg?branch=master)](https://travis-ci.com/davisraimon/react-weather)
 This is a responsive web app that can retrieve weather of any city round the world. 
 Try this url : 
 https://davisraimon.github.io/react-weather/
